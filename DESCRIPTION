@@ -12,6 +12,7 @@ RoxygenNote: 6.1.1
 Collate:
   'bms.R'
   'cipher.R'
+  'copyTable.R'
   'uncipher.R'
 Imports:
   magrittr,
