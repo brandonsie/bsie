@@ -2,6 +2,7 @@
 
 export(ciper)
 export(copyTable)
+export(pasteTable)
 export(rml)
 export(uncipher)
 export(wdf)

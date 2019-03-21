@@ -13,6 +13,7 @@ Collate:
   'bms.R'
   'cipher.R'
   'copyTable.R'
+  'pasteTable.R'
   'rml.R'
   'uncipher.R'
   'wdf.R'
