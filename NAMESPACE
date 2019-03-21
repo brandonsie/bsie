@@ -2,6 +2,9 @@
 
 export(ciper)
 export(copyTable)
+export(rml)
 export(uncipher)
+export(wdf)
+import(data.table)
 importFrom(magrittr,"%<>%")
 importFrom(magrittr,"%>%")

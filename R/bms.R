@@ -6,7 +6,5 @@
 #'
 #' @importFrom magrittr %>%
 #' @importFrom magrittr %<>%
-#' @imports data.table
+#' @import data.table
 NULL
-
-

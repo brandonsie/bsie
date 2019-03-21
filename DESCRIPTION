@@ -4,7 +4,7 @@ Title: Brandon Sie's personal R package
 Version: 0.1.0
 Author: Brandon Sie
 Maintainer: Brandon Sie <brandonsie@gmail.com>
-Description: An assortment of functions I find useful to keep accessible.
+Description: An assortment of personally useful functions.
 License: GPL-3 + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -13,7 +13,9 @@ Collate:
   'bms.R'
   'cipher.R'
   'copyTable.R'
+  'rml.R'
   'uncipher.R'
+  'wdf.R'
 Imports:
   magrittr,
   data.table
