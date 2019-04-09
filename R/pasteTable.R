@@ -4,6 +4,6 @@
 #'
 #' @export
 
-pasteTable <- function(sep = "\t", header = TRUE, ...){
+pasteTable <- function(sep = "\t", header = FALSE, ...){
   read.table("clipboard", sep = sep, header = header, ...)
 }
