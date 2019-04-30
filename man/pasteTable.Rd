@@ -4,7 +4,7 @@
 \alias{pasteTable}
 \title{pasteTable}
 \usage{
-pasteTable(sep = "\\t", header = TRUE, ...)
+pasteTable(sep = "\\t", header = FALSE, ...)
 }
 \description{
 Function to move table from clipboard to R

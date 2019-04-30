@@ -15,6 +15,7 @@ Collate:
   'copyTable.R'
   'deFactor.R'
   'pasteTable.R'
+  'pasteWinpath.R'
   'rml.R'
   'uncipher.R'
   'wdf.R'
