@@ -19,11 +19,11 @@ heatmapExtract <- function(heatmap, scale, scale_range = c(1,0),
   if(class(scale) == "character") scale <- jpeg::readJPEG(scale)
 
   # Process image arrays to Hex arrays
-  heatmap_val <- rgb( heatmap[,,1], heatmap[,,2], heatmap[,,3])
+  heatmap_val <- grDevices::rgb( heatmap[,,1], heatmap[,,2], heatmap[,,3])
   heatmap_mat <- matrix(heatmap_val, dim(heatmap)[1], dim(heatmap)[2] )
   if(verbose) print(paste("Heatmap dimensions (px):", paste(dim(heatmap_mat), collapse = ", ")))
 
-  scale_val <- rgb( scale[,,1], scale[,,2], scale[,,3])
+  scale_val <- grDevices::rgb( scale[,,1], scale[,,2], scale[,,3])
   scale_mat <- matrix(scale_val, dim(scale)[1], dim(scale)[2] )
   if(verbose) print(paste("Color scale dimensions (px):", paste(dim(scale_mat), collapse = ",")))
 
@@ -85,7 +85,7 @@ heatmapExtract <- function(heatmap, scale, scale_range = c(1,0),
   # convert hex values to RGB for heatmap
   heatmap_sample_rgb <- list()
   for(i in 1:n_samples){
-    this_col2rgb <- col2rgb(heatmap_sample_mats[[i]])
+    this_col2rgb <- grDevices::col2rgb(heatmap_sample_mats[[i]])
     this_rgb_mat_list <- list()
     for(j in 1:3){this_rgb_mat_list[[j]] <- this_col2rgb[j,]}
     heatmap_sample_rgb[[i]] <- this_rgb_mat_list
@@ -111,7 +111,7 @@ heatmapExtract <- function(heatmap, scale, scale_range = c(1,0),
 
   } else stop("scale_direction must be either 'vertical' or 'horizontal'")
 
-  scale_rgb <- col2rgb(scale_hex_vector)
+  scale_rgb <- grDevices::col2rgb(scale_hex_vector)
   scale_rgb_list <- list()
   for(i in 1:3){scale_rgb_list[[i]] <- scale_rgb[i,]}
 
@@ -120,7 +120,7 @@ heatmapExtract <- function(heatmap, scale, scale_range = c(1,0),
 
   # map heatmap to color scale values
   value_mat <- matrix(nrow = table_dim[1], ncol = table_dim[2])
-  for(i in 1:product(table_dim)){
+  for(i in 1:prod(table_dim)){ # (!) used to use product() instead of prod(). I don't remember from which package
       this_r <- heatmap_avg_rgb[[1]][i]
       this_g <- heatmap_avg_rgb[[2]][i]
       this_b <- heatmap_avg_rgb[[3]][i]

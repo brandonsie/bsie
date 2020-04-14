@@ -1,7 +1,7 @@
 Package: bms
 Type: Package
 Title: Brandon Sie's personal R package
-Version: 0.1.2
+Version: 0.1.3
 Author: Brandon Sie
 Maintainer: Brandon Sie <brandonsie@gmail.com>
 Description: An assortment of personally useful functions.
@@ -13,6 +13,7 @@ Collate:
   'bms.R'
   'cipher.R'
   'copyTable.R'
+  'copyWinpath.R'
   'deFactor.R'
   'heatmapExtract.R'
   'pasteTable.R'
@@ -22,4 +23,7 @@ Collate:
   'wdf.R'
 Imports:
   magrittr,
-  data.table
+  data.table,
+  utils,
+  jpeg,
+  dplyr

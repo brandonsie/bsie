@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>wdf — wdf • bms</title>
+<title>Input jpg heatmap, color scale, table dimensions. Output matrix of corresponding values. — heatmapExtract • bms</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="wdf — wdf" />
-<meta property="og:description" content="Write Data Frame" />
+<meta property="og:title" content="Input jpg heatmap, color scale, table dimensions. Output matrix of corresponding values. — heatmapExtract" />
+<meta property="og:description" content="Input jpg heatmap, color scale, table dimensions. Output matrix of corresponding values." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -118,36 +118,58 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>wdf</h1>
+    <h1>Input jpg heatmap, color scale, table dimensions. Output matrix of corresponding values.</h1>
     
-    <div class="hidden name"><code>wdf.Rd</code></div>
+    <div class="hidden name"><code>heatmapExtract.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Write Data Frame</p>
+    <p>Input jpg heatmap, color scale, table dimensions. Output matrix of corresponding values.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>wdf</span>(<span class='no'>df</span>)</pre>
+    <pre class="usage"><span class='fu'>heatmapExtract</span>(<span class='no'>heatmap</span>, <span class='no'>scale</span>, <span class='kw'>scale_range</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>0</span>),
+  <span class='kw'>scale_direction</span> <span class='kw'>=</span> <span class='st'>"vertical"</span>, <span class='no'>table_dim</span>, <span class='kw'>n_samples</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>df</th>
-      <td><p>Data frame to write.</p></td>
+      <th>heatmap</th>
+      <td><p>Either image array or path to cropped jpg containing heatmap color info</p></td>
+    </tr>
+    <tr>
+      <th>scale</th>
+      <td><p>Either image array or path to cropped jpg containing color scale info</p></td>
+    </tr>
+    <tr>
+      <th>scale_range</th>
+      <td><p>Numeric vector of length two containing in order the topmost and bottommost (or leftmost and rightmost) value in the color scale.</p></td>
+    </tr>
+    <tr>
+      <th>scale_direction</th>
+      <td><p>Character vector, "vertical" or "horizontal" describing color scale orientation.</p></td>
+    </tr>
+    <tr>
+      <th>table_dim</th>
+      <td><p>Numeric vector of length two containing in order the number of rows and number of columns in the heatmap image</p></td>
+    </tr>
+    <tr>
+      <th>n_samples</th>
+      <td><p>Number of pixels to sample per cell. By default, heatmapExtract estimates the central pixel of each cell based on the heatmap pixel dimensions and table_dim. If n_samples is set &gt; 1, then heatmapExtract will average across multiple near-central pixels.</p></td>
+    </tr>
+    <tr>
+      <th>verbose</th>
+      <td><p>Logical, if true then debugging information will be printed.</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>Write data frame to console without column names or row names.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#details">Details</a></li>
     </ul>
 
   </div>

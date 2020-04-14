@@ -6,6 +6,13 @@
 \usage{
 pasteTable(sep = "\\t", header = FALSE, ...)
 }
+\arguments{
+\item{sep}{table separator value. e.g. tab, space, comma, etc.}
+
+\item{header}{whether or not to assign the first row to column names. default FALSE}
+
+\item{...}{Additional parameters passed to utils::read.table}
+}
 \description{
 Function to move table from clipboard to R
 }

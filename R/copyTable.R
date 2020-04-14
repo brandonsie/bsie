@@ -12,5 +12,5 @@
 
 
 copyTable <- function(df, sep = "\t", row.names = FALSE, ...){
-  write.table(df, "clipboard", sep = sep, row.names = row.names, ...)
+  utils::write.table(df, "clipboard", sep = sep, row.names = row.names, ...)
 }

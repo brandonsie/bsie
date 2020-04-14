@@ -2,7 +2,9 @@
 
 export(ciper)
 export(copyTable)
+export(copyWinpath)
 export(deFactor)
+export(heatmapExtract)
 export(pasteTable)
 export(pasteWinpath)
 export(rml)

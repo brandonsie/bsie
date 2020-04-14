@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>wdf — wdf • bms</title>
+<title>copyWinpath — copyWinpath • bms</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="wdf — wdf" />
-<meta property="og:description" content="Write Data Frame" />
+<meta property="og:title" content="copyWinpath — copyWinpath" />
+<meta property="og:description" content="write converted windows path (from \ to /) to clipboard" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -118,36 +118,32 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>wdf</h1>
+    <h1>copyWinpath</h1>
     
-    <div class="hidden name"><code>wdf.Rd</code></div>
+    <div class="hidden name"><code>copyWinpath.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Write Data Frame</p>
+    <p>write converted windows path (from \ to /) to clipboard</p>
     </div>
 
-    <pre class="usage"><span class='fu'>wdf</span>(<span class='no'>df</span>)</pre>
+    <pre class="usage"><span class='fu'>copyWinpath</span>(<span class='kw'>sub</span> <span class='kw'>=</span> <span class='st'>"/"</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>df</th>
-      <td><p>Data frame to write.</p></td>
+      <th>sub</th>
+      <td><p>Optional gsub to replace '\' with in converted path. Set to '\\' to ignore.</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>Write data frame to console without column names or row names.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#details">Details</a></li>
     </ul>
 
   </div>

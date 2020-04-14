@@ -9,7 +9,7 @@
 #' @export
 
 wdf <- function(df){
-  df %>% as.data.frame %>% write.table(col.names = FALSE, row.names = FALSE)
+  df %>% as.data.frame %>% utils::write.table(col.names = FALSE, row.names = FALSE)
 }
 
 
