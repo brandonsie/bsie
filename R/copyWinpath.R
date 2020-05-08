@@ -11,3 +11,7 @@ copyWinpath <- function(sub = "/"){
   utils::writeClipboard(path)
   return(path)
 }
+
+#' @rdname copyWinpath
+#' @export
+copyURL <- copyWinpath

@@ -2,9 +2,12 @@
 % Please edit documentation in R/pasteWinpath.R
 \name{pasteWinpath}
 \alias{pasteWinpath}
+\alias{pasteURL}
 \title{pasteWinpath gsub wrapper. By default changes \ to / from windows paths from cliboard.}
 \usage{
 pasteWinpath(sub = "/")
+
+pasteURL(sub = "/")
 }
 \arguments{
 \item{sub}{Optional gsub to replace '\\' with in converted path. Set to '\\\\' to ignore.}
