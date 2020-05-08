@@ -9,3 +9,7 @@ pasteWinpath <- function(sub = "/"){
   path <- gsub("\\\\", sub, path)
   return(path)
 }
+
+#' @rdname pasteWinpath
+#' @export
+pasteURL <- pasteWinpath

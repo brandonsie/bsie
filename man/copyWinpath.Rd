@@ -2,9 +2,12 @@
 % Please edit documentation in R/copyWinpath.R
 \name{copyWinpath}
 \alias{copyWinpath}
+\alias{copyURL}
 \title{copyWinpath}
 \usage{
 copyWinpath(sub = "/")
+
+copyURL(sub = "/")
 }
 \arguments{
 \item{sub}{Optional gsub to replace '\\' with in converted path. Set to '\\\\' to ignore.}
