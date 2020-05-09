@@ -20,7 +20,7 @@ zscore_bins <- function(rpm_control, rpm_sample, binsize = 300,
   # Bin peptides by above ranks. Min # of peptides per bin == binsize
   bins <- list()
   this_bin_index <- c()
-  for(i in 1:length(unique_ranks)){
+ for(i in 1:length(unique_ranks)){
     ## First bin epitopes with identical ranks from beads only rankings
     ## If any bin contains fewer than 300 epitopes,
     ##   add epitopes w/ adjacent ranks until each bin >= 300 epitopes
