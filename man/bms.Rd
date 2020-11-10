@@ -3,10 +3,7 @@
 \docType{package}
 \name{bms}
 \alias{bms}
-\alias{bms-package}
-\title{bms
-Package of miscellaneous R functions useful to Brandon Sie.}
+\title{bms}
 \description{
-bms
 Package of miscellaneous R functions useful to Brandon Sie.
 }

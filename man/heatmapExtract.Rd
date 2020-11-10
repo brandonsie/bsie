@@ -4,9 +4,15 @@
 \alias{heatmapExtract}
 \title{Input jpg heatmap, color scale, table dimensions. Output matrix of corresponding values.}
 \usage{
-heatmapExtract(heatmap, scale, scale_range = c(1, 0),
-  scale_direction = "vertical", table_dim, n_samples = 1,
-  verbose = TRUE)
+heatmapExtract(
+  heatmap,
+  scale,
+  scale_range = c(1, 0),
+  scale_direction = "vertical",
+  table_dim,
+  n_samples = 1,
+  verbose = TRUE
+)
 }
 \arguments{
 \item{heatmap}{Either image array or path to cropped jpg containing heatmap color info}

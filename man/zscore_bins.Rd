@@ -5,8 +5,14 @@
 \title{zscore_bins
 Calculate zscores from rpm scaled data. Adapted from Michael Mina et al. 2019 DOI: 10.1126/science.aay6485}
 \usage{
-zscore_bins(rpm_control, rpm_sample, binsize = 300,
-  include_percentile = c(0.05, 0.95))
+zscore_bins(
+  rpm_control,
+  rpm_sample,
+  binsize = 300,
+  include_percentile = c(0.05, 0.95),
+  ignore_cols = c(),
+  export_bins = TRUE
+)
 }
 \arguments{
 \item{rpm_control}{Reads per million (counts per million) data frame of control data from which to determine bins (e.g. beads only). Peptide order should match that of rpm_sample.}
@@ -16,6 +22,10 @@ zscore_bins(rpm_control, rpm_sample, binsize = 300,
 \item{binsize}{Number of peptides per bin (default 300)}
 
 \item{include_percentile}{Peptide percentiles range to include in mean and sd calculation (default 0.05, 0.95)}
+
+\item{ignore_cols}{Column names to exclude from calculation (e.g. id column)}
+
+\item{export_bins}{Logical. if true, include a column called ranks indicating bins based on rpm_control values}
 }
 \description{
 zscore_bins

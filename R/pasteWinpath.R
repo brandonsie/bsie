@@ -5,7 +5,7 @@
 #' @export
 
 pasteWinpath <- function(sub = "/"){
-  path <- readClipboard()
+  path <- utils::readClipboard()
   path <- gsub("\\\\", sub, path)
   return(path)
 }
