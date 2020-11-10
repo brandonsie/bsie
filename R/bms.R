@@ -1,5 +1,5 @@
 #' bms
-#' Package of miscellaneous R functions useful to Brandon Sie.
+#' @description Package of miscellaneous R functions useful to Brandon Sie.
 #'
 #' @docType package
 #' @name bms
