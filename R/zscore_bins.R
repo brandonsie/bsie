@@ -17,13 +17,9 @@ zscore_bins <- function(rpm_control, rpm_sample, binsize = 300,
                         ignore_cols = c(), export_bins = TRUE){
 
   if(length(ignore_cols) > 0){
-<<<<<<< HEAD
     ignore_df <- rpm_sample %>% subset(select = ignore_cols) %>%
       as.data.frame
     colnames(ignore_df) <- ignore_cols
-=======
-    ignore_df <- rpm_sample %>% subset(select = ignore_cols)
->>>>>>> 7cef45002d714b856687a9c0a0be0c351d6eb163
     rpm_sample <- rpm_sample %>% dplyr::select(-tidyselect::all_of(ignore_cols))
   }
 
