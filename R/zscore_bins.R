@@ -7,6 +7,7 @@
 #' @param include_percentile Peptide percentiles range to include in mean and sd calculation (default 0.05, 0.95)
 #' @param ignore_cols Column names to exclude from calculation (e.g. id column)
 #' @param export_bins Logical. if true, include a column called ranks indicating bins based on rpm_control values
+#' @param sd_min. Default value NULL. If set to a numeric value or vector, can be used to impose a floor to the standard deviation. If a single value is given, the same floor is applied to the standard deviation of each bin. If a vector is provided, each value is applied sequentially.
 #'
 #'
 #' @export
@@ -14,7 +15,8 @@
 
 zscore_bins <- function(rpm_control, rpm_sample, binsize = 300,
                         include_percentile = c(0.05, 0.95),
-                        ignore_cols = c(), export_bins = TRUE){
+                        ignore_cols = c(), export_bins = TRUE,
+                        sd_min = NULL){
 
   if(length(ignore_cols) > 0){
     ignore_df <- rpm_sample %>% subset(select = ignore_cols)
@@ -28,6 +30,8 @@ zscore_bins <- function(rpm_control, rpm_sample, binsize = 300,
   # Bin peptides by above ranks. Min # of peptides per bin == binsize
   bins <- list()
   this_bin_index <- c()
+  impose_sd_floor <- ifelse(is.null(sd_min), FALSE,TRUE)
+
  for(i in 1:length(unique_ranks)){
     ## First bin epitopes with identical ranks from beads only rankings
     ## If any bin contains fewer than 300 epitopes,
@@ -56,6 +60,14 @@ zscore_bins <- function(rpm_control, rpm_sample, binsize = 300,
         ]
         bin_mean[i,j] <- mean(this_bin_rpm_mid)
         bin_sd[i,j] <- stats::sd(this_bin_rpm_mid)
+
+        if(impose_sd_floor){
+          if(length(sd_min) > 1){
+          bin_sd[i,j] <- sd_min[i]
+          } else{
+            bin_sd[i,j] <- max(bin_sd[i,j], sd_min)
+          }
+        }
       }
       bin_ids[bins[[i]]] <- i
     }

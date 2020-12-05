@@ -5,14 +5,14 @@
 \title{rpm
 scale data frame so each column sums to 1e6 (by default)}
 \usage{
-rpm(reads, scale = 1e+06, ignore.cols = NULL)
+rpm(reads, scale = 1e+06, ignore_cols = NULL)
 }
 \arguments{
 \item{reads}{Input data frame to rescale}
 
 \item{scale}{Value to which each column should be scaled. Default 1e6}
 
-\item{ignore.cols}{Column names to exclude from calculation (e.g. id column)}
+\item{ignore_cols}{Column names to exclude from calculation (e.g. id column)}
 }
 \description{
 rpm
