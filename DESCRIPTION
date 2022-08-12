@@ -1,27 +1,33 @@
 Package: bms
 Type: Package
 Title: Brandon Sie's personal R package
-Version: 0.1.6
+Version: 0.1.7
 Author: Brandon Sie
 Maintainer: Brandon Sie <brandonsie@gmail.com>
 Description: An assortment of personally useful functions.
 License: GPL-3 + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Collate:
   'bms.R'
+  'calc_stats_binclass.R'
   'cipher.R'
   'copyTable.R'
   'copyWinpath.R'
+  'collapse_df_reps.R'
   'deFactor.R'
   'foldchange.R'
+  'ggplot_theming.R'
   'heatmapExtract.R'
+  'new_pro_fun.R'
   'pasteTable.R'
   'pasteWinpath.R'
+  'readwrite.R'
   'rml.R'
   'rpm.R'
   'uncipher.R'
+  'vir_evidence.R'
   'wdf.R'
   'zscore_bins.R'
 Imports:
@@ -30,4 +36,5 @@ Imports:
   utils,
   jpeg,
   dplyr,
-  tidyselect
+  tidyselect,
+  stringdist

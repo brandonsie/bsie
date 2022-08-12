@@ -20,11 +20,14 @@ zscore_bins <- function(rpm_control, rpm_sample, binsize = 300,
 
   if(length(ignore_cols) > 0){
     ignore_df <- rpm_sample %>% subset(select = ignore_cols)
-    rpm_sample <- rpm_sample %>% dplyr::select(-tidyselect::all_of(ignore_cols))
+    rpm_sample <- rpm_sample %>% dplyr::select(-tidyselect::any_of(ignore_cols))
+    rpm_control <- rpm_control %>% dplyr::select(-tidyselect::any_of(ignore_cols))
   }
 
   # Rank order RPM from controls (e.g. beads-only IP, input library)
-  control_ranks <- rpm_control %>% as.data.frame %>% apply(1, sum) %>% "*"(-1) %>% rank
+  control_ranks <- rpm_control %>% as.data.frame %>% apply(1, sum)# %>% "*"(-1) %>% rank
+  control_ranks <- control_ranks * -1
+  control_ranks <- control_ranks %>% rank
   unique_ranks <- control_ranks %>% unique %>% sort
 
   # Bin peptides by above ranks. Min # of peptides per bin == binsize
@@ -100,3 +103,47 @@ zscore_bins <- function(rpm_control, rpm_sample, binsize = 300,
     return(zscores)
 }
 
+
+
+#' hits_score
+#'
+#' compute hits based on z-scores, value abot threhsold
+#' @param df data frame of z-scores
+#' @param z_thresh threshold above which to consider a hit.
+#' @param ignore_cols columns to ignore from hit analysis (e.g. feature id)
+#'
+#' @export
+
+hits_score <-
+  function(df, z_thresh = 5,
+           ignore_cols = c("id", "bin")) {
+
+    if (length(ignore_cols) > 0) {
+      ignore_df <- df %>% subset(select = ignore_cols)
+      df <- df %>% dplyr::select(-tidyselect::all_of(ignore_cols))
+    }
+
+    df_hits <- df %>% apply(2, function(x) {
+      x[x<z_thresh] = 0
+      x
+    }) %>% tibble::as_tibble()
+
+    dplyr::bind_cols(ignore_df, df_hits)
+  }
+
+#' compute_breadth
+#'
+#' count number of hits per sample
+#'
+#' @export
+
+compute_breadth <- function(df, ignore_cols = c("id", "bin")){
+
+  if (length(ignore_cols) > 0) {
+    ignore_df <- df %>% subset(select = ignore_cols)
+    df <- df %>% dplyr::select(-tidyselect::all_of(ignore_cols))
+  }
+
+  df_breadth <- df %>% apply(2, function(x) sum(x>0))
+
+}
