@@ -27,6 +27,7 @@ Collate:
   'rml.R'
   'rpm.R'
   'uncipher.R'
+  'useful.R'
   'vir_evidence.R'
   'wdf.R'
   'zscore_bins.R'
