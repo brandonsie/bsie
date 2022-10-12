@@ -4,7 +4,7 @@
 \alias{\%>\%}
 \title{magrittr pipe}
 \usage{
-lhs \%>\% rhs
+ \%>\% 
 }
 \description{
 magrittr pipe
