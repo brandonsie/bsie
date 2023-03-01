@@ -1,7 +1,7 @@
 Package: bms
 Type: Package
 Title: Brandon Sie's personal R package
-Version: 0.1.7
+Version: 0.1.8
 Author: Brandon Sie
 Maintainer: Brandon Sie <brandonsie@gmail.com>
 Description: An assortment of personally useful functions.
@@ -20,6 +20,7 @@ Collate:
   'foldchange.R'
   'ggplot_theming.R'
   'heatmapExtract.R'
+  'mode.R'
   'new_pro_fun.R'
   'pasteTable.R'
   'pasteWinpath.R'

@@ -12,6 +12,7 @@
 
 
 collapse_df_reps <-
+  `%>%` <- magrittr::`%>%`
   function(df,
            pid,
            method = c("min", "mean", "clean", "cor"),

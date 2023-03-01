@@ -17,7 +17,7 @@ zscore_bins <- function(rpm_control, rpm_sample, binsize = 300,
                         include_percentile = c(0.05, 0.95),
                         ignore_cols = c(), export_bins = TRUE,
                         sd_min = NULL){
-
+  `%>%` <- magrittr::`%>%`
   if(length(ignore_cols) > 0){
     ignore_df <- rpm_sample %>% subset(select = ignore_cols)
     rpm_sample <- rpm_sample %>% dplyr::select(-tidyselect::any_of(ignore_cols))
