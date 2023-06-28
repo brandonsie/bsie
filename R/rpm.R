@@ -10,19 +10,26 @@
 
 rpm <- function(reads, scale = 1e6, ignore_cols = NULL){
   if(!is.null(ignore_cols)){
-    ignore_df <- reads %>% subset(select = ignore_cols)
-    reads <- reads %>% dplyr::select(-tidyselect::all_of(ignore_cols))
+    # ignore_df <- reads %>% base::subset(select = ignore_cols)
+    # reads <- reads %>% dplyr::select(-tidyselect::all_of(ignore_cols))
+
+    reads_colnames <- colnames(reads)
+    cols_to_ignore <- reads_colnames %in% ignore_cols
+
+    ignore_df <- reads[cols_to_ignore]
+    reads <- reads[!cols_to_ignore]
+
 
   }
 
-  rpm <- reads %>% apply(2, function(x){
-    x * scale / sum(x)
-  }) %>% as.data.frame
+  rpm_df <- apply(reads, 2, function(x){x * scale / sum(x)})
+  rpm_df <- as.data.frame(rpm_df)
+  # rpm_df <- apply(reads, 2, function(x){x * scale / sum(x)}) %>% as.data.frame()
   if(!is.null(ignore_cols)){
-    rpm <- dplyr::bind_cols(ignore_df, rpm)
+    rpm_df <- dplyr::bind_cols(ignore_df, rpm_df)
   }
 
-  return(rpm)
+  return(rpm_df)
 
 }
 

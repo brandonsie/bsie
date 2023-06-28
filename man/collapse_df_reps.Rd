@@ -4,14 +4,7 @@
 \alias{collapse_df_reps}
 \title{collapse_df_reps}
 \usage{
-collapse_df_reps(
-  df,
-  pid,
-  method = c("min", "mean", "clean", "cor"),
-  clean_thresh = 2.5,
-  ignore_cols = NULL,
-  show_progress = TRUE
-)
+collapse_df_reps(lhs, rhs)
 }
 \arguments{
 \item{df}{data frame or tibble with observations as columns}

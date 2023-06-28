@@ -9,16 +9,3 @@ crossing <- function(...){
 }
 
 
-#' magrittr pipe
-#' @export
-
-`%>%` <- function(){
-  magrittr::`%>%`
-
-}
-
-
-#' magrittr pipe
-#' @export
-
-`%^%` <- magrittr::`%>%`
