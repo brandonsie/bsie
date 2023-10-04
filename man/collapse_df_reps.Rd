@@ -4,7 +4,14 @@
 \alias{collapse_df_reps}
 \title{collapse_df_reps}
 \usage{
-collapse_df_reps(lhs, rhs)
+collapse_df_reps(
+  df,
+  pid,
+  method = c("min", "mean", "clean", "cor"),
+  clean_thresh = 2.5,
+  ignore_cols = NULL,
+  show_progress = TRUE
+)
 }
 \arguments{
 \item{df}{data frame or tibble with observations as columns}
@@ -20,5 +27,5 @@ collapse_df_reps(lhs, rhs)
 \item{show_progress}{logical indicating whether or not to show progress bar}
 }
 \description{
-collapse columns in df which chare an identity index provided in the vector pid
+collapse columns in df which share an identity index provided in the vector pid
 }

@@ -9,6 +9,11 @@ https://stackoverflow.com/questions/13133297/calculating-peaks-in-histograms-or-
 \usage{
 mode_fun(vector, ...)
 }
+\arguments{
+\item{vector}{numeric vector from which to calculate mode}
+
+\item{...}{additional parameters, not used}
+}
 \description{
 calculate mode from numeric vector (e.g. to indicate peak of density plot)
 takes numeric vector, outputx x axis value of y axis peak

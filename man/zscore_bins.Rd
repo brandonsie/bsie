@@ -28,7 +28,7 @@ zscore_bins(
 
 \item{export_bins}{Logical. if true, include a column called ranks indicating bins based on rpm_control values}
 
-\item{sd_min.}{Default value NULL. If set to a numeric value or vector, can be used to impose a floor to the standard deviation. If a single value is given, the same floor is applied to the standard deviation of each bin. If a vector is provided, each value is applied sequentially.}
+\item{sd_min}{Default value NULL. If set to a numeric value or vector, can be used to impose a floor to the standard deviation. If a single value is given, the same floor is applied to the standard deviation of each bin. If a vector is provided, each value is applied sequentially.}
 }
 \description{
 zscore_bins

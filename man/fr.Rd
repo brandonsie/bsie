@@ -6,6 +6,14 @@
 \usage{
 fr(file, ...)
 }
+\arguments{
+\item{file}{directory path to table}
+
+\item{...}{additional parameters to pass to data.table::fread}
+}
 \description{
 fread fwrite wrappers
+}
+\details{
+fr
 }

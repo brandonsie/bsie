@@ -6,6 +6,11 @@
 \usage{
 compute_breadth(df, ignore_cols = c("id", "bin"))
 }
+\arguments{
+\item{df}{data frame of enrichment scores}
+
+\item{ignore_cols}{column of data frame containing metadata that chould be excluded from breadth calculation}
+}
 \description{
 count number of hits per sample
 }
