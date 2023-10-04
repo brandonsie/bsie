@@ -6,6 +6,14 @@
 \usage{
 fw(x, file, ...)
 }
+\arguments{
+\item{x}{table to write}
+
+\item{file}{directory path destination to write}
+
+\item{...}{additional parameters to pass to data.table::fwrite}
+}
 \description{
 fread fwrite wrappers
+fw
 }

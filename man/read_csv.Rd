@@ -6,6 +6,14 @@
 \usage{
 read_csv(file, ...)
 }
+\arguments{
+\item{file}{directory path to csv}
+
+\item{...}{additional parameters to pass to readr::read_csv}
+}
 \description{
 fread fwrite wrappers
+}
+\details{
+read_csv
 }

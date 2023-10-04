@@ -6,6 +6,9 @@
 \usage{
 crossing(...)
 }
+\arguments{
+\item{...}{parameters to pass to tidyr::crossing}
+}
 \description{
 tidyr::crossing is like base::expand.grid. all unique combinations of elements from 2 vectors
 }

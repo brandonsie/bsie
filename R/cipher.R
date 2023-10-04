@@ -7,6 +7,7 @@
 #' @export
 
 ciper <- function(input, seed, key = c(LETTERS)){
+  `%>%` <- magrittr::`%>%`
   set.seed(seed)
   scr <- key %>% strsplit(NULL) %>% unlist %>% sample %>% paste(collapse="")
   return(chartr(key,scr,input))

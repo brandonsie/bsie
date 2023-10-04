@@ -27,5 +27,5 @@ collapse_df_reps(
 \item{show_progress}{logical indicating whether or not to show progress bar}
 }
 \description{
-collapse columns in df which chare an identity index provided in the vector pid
+collapse columns in df which share an identity index provided in the vector pid
 }
