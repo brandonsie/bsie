@@ -15,8 +15,8 @@ heatmapExtract <- function(heatmap, scale, scale_range = c(1,0),
                            n_samples = 1, verbose = TRUE){
 
   # Read in heatmap and scale from paths if necessary
-  if(class(heatmap) == "character") heatmap <- jpeg::readJPEG(heatmap)
-  if(class(scale) == "character") scale <- jpeg::readJPEG(scale)
+  if(class(heatmap)[1] == "character") heatmap <- jpeg::readJPEG(heatmap)
+  if(class(scale)[1] == "character") scale <- jpeg::readJPEG(scale)
 
   # Process image arrays to Hex arrays
   heatmap_val <- grDevices::rgb( heatmap[,,1], heatmap[,,2], heatmap[,,3])

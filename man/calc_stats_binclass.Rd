@@ -16,7 +16,8 @@ calc_stats_binclass(
     "false.omission.rate", "false.discovery.rate", "positive.likelihood.ratio",
     "negative.likelihood.ratio", "markedness", "diagnostic.odds.ratio",
     "total.populatio", "prevalence", "accuracy", "balanced accuracy", "informedness",
-    "prevalence.threshold", "f1.score", "fowlkes-mallows.index",     
+    "prevalence.threshold", "f1.score", "fowlkes-mallows.index", 
+    
     "matthews.correction.coefficient", "threat.score")
 )
 }
