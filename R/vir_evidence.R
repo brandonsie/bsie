@@ -12,6 +12,7 @@
 #' @param similarity_method method to use for characterizing similarity between peptide seuqneces provided by hit_aa.
 #' @param similarity_thresh amino acid overlap threshold or blast e-value threshold to use for similarity cutoff.
 #'
+#' @importFrom stringdist stringdist
 #' @export
 
 

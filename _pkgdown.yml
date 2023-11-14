@@ -1,4 +1,4 @@
-title: bms
+title: bsie
 
 template:
   params:
@@ -13,7 +13,7 @@ navbar:
       href: "reference/index.html"
   right:
     - icon: fa-github
-      href: https://github.com/brandonsie/bms/
+      href: https://github.com/brandonsie/bsie/
     - text: brandonsie
       href: https://brandonsie.github.io/
 
