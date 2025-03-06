@@ -2,7 +2,7 @@
 % Please edit documentation in R/mode.R
 \name{mode_fun}
 \alias{mode_fun}
-\title{calculate mode from numeric vector (e.g. to indicate peak of density plot)
+\title{approximate mode from numeric vector (e.g. to indicate peak of density plot)
 takes numeric vector, outputx x axis value of y axis peak
 https://stackoverflow.com/questions/13133297/calculating-peaks-in-histograms-or-density-functions
 ... for use in ggridges::geom_density_ridges to ignore second parameter of quantiles}
@@ -15,8 +15,12 @@ mode_fun(vector, ...)
 \item{...}{additional parameters, not used}
 }
 \description{
-calculate mode from numeric vector (e.g. to indicate peak of density plot)
+approximate mode from numeric vector (e.g. to indicate peak of density plot)
 takes numeric vector, outputx x axis value of y axis peak
 https://stackoverflow.com/questions/13133297/calculating-peaks-in-histograms-or-density-functions
 ... for use in ggridges::geom_density_ridges to ignore second parameter of quantiles
+}
+\examples{
+# basic usage
+m <- mode_fun(c(1,2,2,3,4,2,5))
 }
